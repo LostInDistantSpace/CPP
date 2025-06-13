@@ -6,25 +6,25 @@ Harl::~Harl() {}
 
 void Harl::debug( void )
 {
-	std::cout << "[ DEBUG ]" << std::endl;
+	std::cout << "[ DEBUG ]\n";
 	std::cout << "Did you know that some monkeys and apes have amazing grip strength ?" << std::endl << std::endl;
 }
 
 void Harl::info( void )
 {
-	std::cout << "[ INFO ]" << std::endl;
+	std::cout << "[ INFO ]\n";
 	std::cout << "It's quite dangerous to be around chimpanzees for exemple !" << std::endl << std::endl;
 }
 
 void Harl::warning( void )
 {
-	std::cout << "[ WARNING ]" << std::endl;
+	std::cout << "[ WARNING ]\n";
 	std::cout << "You risk a lot by going inside chimpanzee enlosure at the zoo." << std::endl << std::endl;
 }
 
 void Harl::error( void )
 {
-	std::cout << "[ ERROR ]" << std::endl;
+	std::cout << "[ ERROR ]\n";
 	std::cout << "GET OUT OF THE CHIMPANZEE ENCLOSURE YOU FOOL" << std::endl << std::endl;
 }
 
