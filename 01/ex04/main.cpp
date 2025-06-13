@@ -16,9 +16,11 @@ int	main(int ac, char **av)
 	std::string 	file = av[1], new_file = file + ".replace", og_word = av[2], new_word = av[3];
 	if (file.empty() || og_word.empty())
 		return (err_msg("Filename and s1 cannot be empty strings"), 2);
+	
 	std::ifstream	infile(file.c_str(), std::ifstream::in);
 	if (!infile.good())
 		return (err_msg("Error opening file : " + file), 3);
+	
 	std::ofstream	outfile(new_file.c_str(), std::ofstream::out);
 	if (!outfile.good())
 		return (err_msg("Error opening file : " + new_file), 3);

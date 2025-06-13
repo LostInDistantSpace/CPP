@@ -35,8 +35,26 @@ void Harl::complain( std::string level )
 	std::string	_level[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 	for (int i = 0; i < 4; i++)
+	{
 		if (level == _level[i])
-			return ((this->*complaint[i])());
+		{
+			switch (i)
+			{
+				case 0:
+					(this->*complaint[0])();
+				case 1:
+					(this->*complaint[1])();
+				case 2:
+					(this->*complaint[2])();
+				case 3:
+					(this->*complaint[3])();
+					break;
+				default:
+					std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+			}
+			return ;
+		}
+	}
 
 	std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 }
