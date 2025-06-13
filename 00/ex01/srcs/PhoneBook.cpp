@@ -89,6 +89,8 @@ void	PhoneBook::cmd_loop()
 	std::cout << "- EXIT the program" << std::endl << std::endl;
 	while (std::getline(std::cin, cmd))
 	{
+		if (std::cin.eof())
+			exit(1);
 		if (!cmd.compare("ADD"))
 			add();
 		else if (!cmd.compare("SEARCH"))
