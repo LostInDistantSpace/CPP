@@ -4,7 +4,7 @@
 
 int	main()
 {
-	std::string string = "This is a string";
+	std::string string = "HI THIS IS BRAIN";
 	std::string* stringPTR = &string;
 	std::string& stringREF = string;
 
