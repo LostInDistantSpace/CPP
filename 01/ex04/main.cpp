@@ -31,12 +31,12 @@ int	main(int ac, char **av)
 		size_t	prev_pos = 0, pos = line.find(og_word);
 		while (pos != std::string::npos)
 		{
-			new_line.append(line, prev_pos, pos);
+			new_line.append(line, prev_pos, pos - prev_pos);
 			new_line.append(new_word);
 			prev_pos = pos + og_word.length();
 			pos = line.find(og_word, prev_pos);
 		}
-		new_line.append(line, prev_pos, pos);
+		new_line.append(line, prev_pos, pos - prev_pos);
 		outfile << new_line << std::endl;
 		new_line.clear();
 	}
