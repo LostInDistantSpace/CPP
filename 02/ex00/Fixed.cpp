@@ -8,7 +8,7 @@ Fixed::Fixed() : _fpoint_value(0)
 Fixed::Fixed(const Fixed& og)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	_fpoint_value = og.getRawBits();
+	*this = og;
 }
 
 Fixed::~Fixed()
@@ -19,7 +19,9 @@ Fixed::~Fixed()
 Fixed&	Fixed::operator=(const Fixed &src)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	_fpoint_value = src._fpoint_value;
+	if (this != &src)
+		_fpoint_value = src.getRawBits();
+	return (*this);
 }
 
 
