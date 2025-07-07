@@ -9,17 +9,19 @@ NAME			:=	fixed
 SRC				:=	main.cpp
 SRC				+=	Fixed.cpp
 
+OBJS				:=	$(SRC:.cpp=.o)
+
 # --------------------------------- COMMANDS --------------------------------- #
 
-CPP				:=	c++
+CXX				:=	c++
 RM				:=	/bin/rm -rf
 
 # ----------------------------------- FLAGS ---------------------------------- #
 
-CPPFLAGS		:=	-std=c++98
-CPPFLAGS		+=	-Wall
-CPPFLAGS		+=	-Wextra
-CPPFLAGS		+=	-Werror
+CXXFLAGS		:=	-std=c++98
+CXXFLAGS		+=	-Wall
+CXXFLAGS		+=	-Wextra
+CXXFLAGS		+=	-Werror
 
 # ---------------------------------------------------------------------------- #
 #                                    RULES                                     #
@@ -27,15 +29,21 @@ CPPFLAGS		+=	-Werror
 
 all:				$(NAME)
 
-$(NAME):
-					$(CPP) $(CPPFLAGS) $(SRC) -o $(NAME)
+$(NAME): $(OBJS)
+					$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+
+%.o:%.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+nomsg: CXXFLAGS += -DMSG=0
+nomsg: clean $(NAME)
 
 clean:
-					$(RM) $(OBJS_DIR)
+					$(RM) $(OBJS)
 
 fclean:				clean
 					$(RM) $(NAME)
 
 re:					fclean all
 
-.PHONY:				all debug clean fclean re
+.PHONY:				all debug clean nomsg fclean re

@@ -1,8 +1,12 @@
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
-#include <iostream>
-#include <cmath>
+# include <iostream>
+# include <cmath>
+
+# ifndef MSG
+#  define MSG 1
+# endif
 
 class Fixed
 {

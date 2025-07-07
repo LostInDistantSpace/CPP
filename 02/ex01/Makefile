@@ -9,9 +9,11 @@ NAME			:=	fixed
 SRC				:=	main.cpp
 SRC				+=	Fixed.cpp
 
+OBJS				:=	$(SRC:.cpp=.o)
+
 # --------------------------------- COMMANDS --------------------------------- #
 
-CPP				:=	c++
+CXX				:=	c++
 RM				:=	/bin/rm -rf
 
 # ----------------------------------- FLAGS ---------------------------------- #
@@ -27,11 +29,14 @@ CPPFLAGS		+=	-Werror
 
 all:				$(NAME)
 
-$(NAME):
-					$(CPP) $(CPPFLAGS) $(SRC) -o $(NAME)
+$(NAME): $(OBJS)
+					$(CXX) $(CPPFLAGS) $(OBJS) -o $(NAME)
+
+%.o:%.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-					$(RM) $(OBJS_DIR)
+					$(RM) $(OBJS)
 
 fclean:				clean
 					$(RM) $(NAME)
