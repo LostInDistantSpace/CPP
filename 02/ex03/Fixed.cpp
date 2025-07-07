@@ -1,10 +1,10 @@
 #include "Fixed.hpp"
 
-Fixed::Fixed() 					: _fpoint_value(0)								{ if (MSG) std::cout << "Default constructor called" << std::endl; }
-Fixed::Fixed(const int input)	: _fpoint_value(input << _fbits)				{ if (MSG) std::cout << "Int constructor called" << std::endl; }
-Fixed::Fixed(const float input)	: _fpoint_value(roundf(input * (1 << _fbits)))	{ if (MSG) std::cout << "Float constructor called" << _fpoint_value << std::endl; }
-Fixed::Fixed(const Fixed& og)	: _fpoint_value(og._fpoint_value)				{ if (MSG) std::cout << "Copy constructor called" << std::endl; }
-Fixed::~Fixed() 																{ if (MSG) std::cout << "Copy constructor called" << std::endl; }
+Fixed::Fixed() 					: _fpoint_value(0)								{}
+Fixed::Fixed(const int input)	: _fpoint_value(input << _fbits)				{}
+Fixed::Fixed(const float input)	: _fpoint_value(roundf(input * (1 << _fbits)))	{}
+Fixed::Fixed(const Fixed& og)	: _fpoint_value(og._fpoint_value)				{}
+Fixed::~Fixed() 																{}
 
 Fixed&	Fixed::operator=(const Fixed &src)
 {

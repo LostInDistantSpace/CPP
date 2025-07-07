@@ -11,7 +11,7 @@ SRC				+=	Fixed.cpp
 SRC				+=	Point.cpp
 SRC				+=	bsp.cpp
 
-OBJS				:=	$(SRC:.cpp=.o)
+OBJS			:=	$(SRC:.cpp=.o)
 
 # --------------------------------- COMMANDS --------------------------------- #
 
@@ -36,9 +36,6 @@ $(NAME): $(OBJS)
 
 %.o:%.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
-
-nomsg: CXXFLAGS += -DMSG=0
-nomsg: clean $(NAME)
 
 clean:
 					$(RM) $(OBJS)

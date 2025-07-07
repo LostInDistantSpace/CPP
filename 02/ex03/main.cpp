@@ -1,19 +1,22 @@
-#include <iostream>
 #include "Fixed.hpp"
+#include "Point.hpp"
 
-int main( void ) {
-	Fixed 		a;
-	Fixed const	b( Fixed( 5.05f ) * Fixed( 2 ) );
+bool bsp( Point const &a, Point const &b, Point const &c, Point const &point);
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
+int main(void)
+{
+		Point a(0.0f, 0.0f);
+		Point b(5.0f, 0.0f);
+		Point c(2.5f, 5.0f);
 
-	std::cout << b << std::endl;
+		Point p(3.5f, 2.0f);
+		Point p2(5.0f, 0.0f);
+		Point p3(15.0f, 0.0f);
+		Point p4(0.0f, 0.0f);
 
-	std::cout << Fixed::max( a, b ) << std::endl;
-
-	return 0;
+		bsp(a, b, c, p) ? std::cout << "True" << std::endl : std::cout << "False" << std::endl;
+		bsp(a, b, c, p2) ? std::cout << "True" << std::endl : std::cout << "False" << std::endl;
+		bsp(a, b, c, p3) ? std::cout << "True" << std::endl : std::cout << "False" << std::endl;
+		bsp(a, b, c, p4) ? std::cout << "True" << std::endl : std::cout << "False" << std::endl;
+	return (0);
 }

@@ -4,10 +4,6 @@
 # include <iostream>
 # include <cmath>
 
-# ifndef MSG
-#  define MSG 1
-# endif
-
 class Fixed
 {
 private:
