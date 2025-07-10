@@ -34,20 +34,18 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& src)
 }
 
 
-void ClapTrap::attack(const std::string& target)
+void ClapTrap::attack(const std::string& target) 
 {
-	if (!_hp)
+	if (!_hp || !_ep)
 	{
-		std::cout << _name << " is KO and cannot attack" << std::endl;
+		if (!_hp)
+			std::cout << _name << " is KO and cannot attack" << std::endl;
+		if (!_ep)
+			std::cout << _name << " has no energy left and cannot attack" << std::endl;
 		return;
 	}
-	if (!_ep)
-	{
-		std::cout << _name << " has no energy left and cannot attack" << std::endl;
-		return;
-	}
-	_ep--;
 
+	_ep--;
 	std::cout << _name << " attacks " << target;
 	std::cout << ", causing " << _dmg << "DMG, and now has" << _ep << "EP left"  << std::endl;
 }

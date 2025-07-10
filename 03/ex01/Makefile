@@ -8,6 +8,7 @@ NAME			:=	claptrap
 
 SRC				:=	main.cpp
 SRC				+=	ClapTrap.cpp
+SRC				+=	ScavTrap.cpp
 
 OBJS			:=	$(SRC:.cpp=.o)
 
