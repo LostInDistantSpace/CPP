@@ -23,12 +23,14 @@ public:
 	void	attack(const std::string& target);
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
-	void	setHP();
-	void	setEP();
-	void	setDMG();
-	uint	getHP();
-	uint	getEP();
-	uint	getDMG();
+	
+	void		setHP();
+	void		setEP();
+	void		setDMG();
+	uint		getHP() const;
+	uint		getEP() const;
+	uint		getDMG() const;
+	std::string	getName() const;
 };
 
 

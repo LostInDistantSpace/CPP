@@ -18,14 +18,16 @@ ClapTrap::~ClapTrap()
 	std::cout << "ClapTrap " << _name << " destroyed" << std::endl;
 }
 
-ClapTrap ClapTrap::operator=(const ClapTrap& src)
+ClapTrap& ClapTrap::operator=(const ClapTrap& src)
 {
-	ClapTrap	clap;
-	clap._name = src._name;
-	clap._hp = src._hp;
-	clap._ep = src._ep;
-	clap._dmg = src._dmg;
-	return (clap);
+	if (this != &src)
+	{
+		_name = src.getName();
+		_hp = src.getHP();
+		_ep = src.getEP();
+		_dmg = src.getDMG();
+	}
+	return (*this);
 }
 
 
@@ -51,14 +53,13 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (_hp <= 0)
 	{
-		std::cout << _name << " is already KO" << std::endl;
+		std::cout << _name << " is already KO and cannot take damage" << std::endl;
 		return;
 	}
 	if (amount >= _hp)
 		_hp = 0;
 	else
 		_hp -= amount;
-	_ep--;
 
 	std::cout << _name << " takes " << amount << "DMG, ";
 	if (_hp == 0)
@@ -85,3 +86,12 @@ void ClapTrap::beRepaired(unsigned int amount)
 	std::cout << _name << " regains " << amount << "HP";
 	std::cout << " (" << _hp << "HP | " << _ep << "EP)" << std::endl;
 }
+
+void		ClapTrap::setHP()	{ _hp = 10; }
+void		ClapTrap::setEP()	{ _ep = 10; }
+void		ClapTrap::setDMG()	{ _dmg = 0; }
+
+uint		ClapTrap::getHP() const		{ return (_hp); }
+uint		ClapTrap::getEP() const		{ return (_ep); }
+uint		ClapTrap::getDMG() const	{ return (_dmg); }
+std::string	ClapTrap::getName() const	{ return (_name); }

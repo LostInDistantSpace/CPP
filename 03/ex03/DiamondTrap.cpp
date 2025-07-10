@@ -1,12 +1,11 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name), _name(name)
 {
-	this->_name = name;
 	FragTrap::setHP();
 	ScavTrap::setEP();
 	FragTrap::setDMG();
-	std::cout << "DiamondTrap " << this->_name << " created" << std::endl;
+	std::cout << "DiamondTrap " << _name << " created" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& src)

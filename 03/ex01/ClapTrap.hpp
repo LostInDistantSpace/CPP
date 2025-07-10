@@ -17,11 +17,21 @@ protected:
 public:
 	ClapTrap(std::string name);
 	ClapTrap(const ClapTrap& src);
-	ClapTrap operator=(const ClapTrap& src);
 	~ClapTrap();
+
+	ClapTrap& operator=(const ClapTrap& src);
+
 	void attack(const std::string& target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
+	
+	void		setHP();
+	void		setEP();
+	void		setDMG();
+	uint		getHP() const;
+	uint		getEP() const;
+	uint		getDMG() const;
+	std::string	getName() const;
 };
 
 
