@@ -2,7 +2,7 @@
 
 ClapTrap::ClapTrap() : _name(""), _hp(10), _ep(10), _dmg(0)
 {
-	std::cout << "ClapTrap " << _name << " created" << std::endl;
+	std::cout << "ClapTrap created with default constructor" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _dmg(0) 

@@ -5,7 +5,7 @@ FragTrap::FragTrap() : ClapTrap()
 	_hp = 100;
 	_ep = 100;
 	_dmg = 30;
-	std::cout << "FragTrap " << _name << " created" << std::endl;
+	std::cout << "FragTrap created with default constructor" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name) 
@@ -25,6 +25,18 @@ FragTrap::FragTrap(const FragTrap& src)
 FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap " << _name << " destroyed" << std::endl;
+}
+
+FragTrap& FragTrap::operator=(const FragTrap& src)
+{
+	if (this != &src)
+	{
+		_name = src.getName();
+		_hp = src.getHP();
+		_ep = src.getEP();
+		_dmg = src.getDMG();
+	}
+	return (*this);
 }
 
 void	FragTrap::attack(const std::string& target)
@@ -47,7 +59,7 @@ void	FragTrap::attack(const std::string& target)
 
 void	FragTrap::highFivesGuys()
 {
-	std::cout << "FragTrap " << _name << " : 'Let's a high five !'" << std::endl;
+	std::cout << _name << " is asking for a high five" << std::endl;
 }
 
 void	FragTrap::setHP()

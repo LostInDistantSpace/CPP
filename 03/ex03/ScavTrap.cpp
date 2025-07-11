@@ -5,7 +5,7 @@ ScavTrap::ScavTrap() : ClapTrap()
 	_hp = 100;
 	_ep = 50;
 	_dmg = 20;
-	std::cout << "ScavTrap " << _name << " created" << std::endl;
+	std::cout << "ScavTrap created with default constructor" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) 
@@ -25,6 +25,18 @@ ScavTrap::ScavTrap(const ScavTrap& src)
 ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap " << _name << " destroyed" << std::endl;
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& src)
+{
+	if (this != &src)
+	{
+		_name = src.getName();
+		_hp = src.getHP();
+		_ep = src.getEP();
+		_dmg = src.getDMG();
+	}
+	return (*this);
 }
 
 void	ScavTrap::attack(const std::string& target)

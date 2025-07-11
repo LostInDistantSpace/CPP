@@ -46,7 +46,7 @@ void ClapTrap::attack(const std::string& target)
 	_ep--;
 
 	std::cout << _name << " attacks " << target;
-	std::cout << ", causing " << _dmg << "DMG (" << _ep << "EP)"  << std::endl;
+	std::cout << ", causing " << _dmg << "DMG, and has " << _ep << "EP left"  << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -85,7 +85,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 	_ep--;
 
 	std::cout << _name << " regains " << amount << "HP";
-	std::cout << " (" << _hp << "HP | " << _ep << "EP)" << std::endl;
+	std::cout << " and now has " << _hp << "HP and " << _ep << "EP left" << std::endl;
 }
 
 void		ClapTrap::setHP()	{ _hp = 10; }

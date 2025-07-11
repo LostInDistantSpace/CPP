@@ -19,6 +19,18 @@ FragTrap::~FragTrap()
 	std::cout << "FragTrap " << _name << " destroyed" << std::endl;
 }
 
+FragTrap& FragTrap::operator=(const FragTrap& src)
+{
+	if (this != &src)
+	{
+		_name = src.getName();
+		_hp = src.getHP();
+		_ep = src.getEP();
+		_dmg = src.getDMG();
+	}
+	return (*this);
+}
+
 void	FragTrap::attack(const std::string& target)
 {
 	if (!_ep)
@@ -39,5 +51,5 @@ void	FragTrap::attack(const std::string& target)
 
 void	FragTrap::highFivesGuys()
 {
-	std::cout << "FragTrap " << _name << " : 'Let's a high five !'" << std::endl;
+	std::cout << _name << " is asking for a high five" << std::endl;
 }

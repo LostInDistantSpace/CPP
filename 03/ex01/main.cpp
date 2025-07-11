@@ -4,16 +4,16 @@ int	main()
 {
 	// Test ClapTrap
 	std::cout << "--- Testing ClapTrap ---" << std::endl;
-	ClapTrap clap("a transphobe");
-	clap.attack("NPC");
+	ClapTrap clap("Pedro Pascal");
+	clap.attack("a racist");
 	clap.takeDamage(5);
 	clap.beRepaired(3);
 
 	// Test ScavTrap
 	std::cout << "\n--- Testing ScavTrap ---" << std::endl;
-	ScavTrap scav("Scav");
-	scav.attack("a racist");	// Message d'attaque différent
-	scav.takeDamage(20);	// Plus de points de vie
+	ScavTrap scav("Spiderman");
+	scav.attack("a transphobe");	// Message d'attaque différent
+	scav.takeDamage(10);	// Plus de points de vie
 	scav.beRepaired(10);
 	scav.guardGate();		// Nouvelle fonction
 

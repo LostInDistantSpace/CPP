@@ -46,7 +46,7 @@ void ClapTrap::attack(const std::string& target)
 	_ep--;
 
 	std::cout << _name << " attacks " << target;
-	std::cout << " for " << _dmg << "DMG, " << _ep << "EP left"  << std::endl;
+	std::cout << " causing " << _dmg << "DMG, " << _ep << "EP left"  << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)

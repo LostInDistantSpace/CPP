@@ -19,6 +19,18 @@ DiamondTrap::~DiamondTrap()
 	std::cout << "DiamondTrap " << _name << " destroyed" << std::endl;
 }
 
+DiamondTrap& DiamondTrap::operator=(const DiamondTrap& src)
+{
+	if (this != &src)
+	{
+		ClapTrap::operator=(src);
+		ScavTrap::operator=(src);
+		FragTrap::operator=(src);
+		this->_name = src._name;
+	}
+	return (*this);
+}
+
 void	DiamondTrap::attack(const std::string& target)
 {
 	ScavTrap::attack(target);
@@ -26,5 +38,6 @@ void	DiamondTrap::attack(const std::string& target)
 
 void	DiamondTrap::whoAmI()
 {
-	std::cout << "I'm : " << _name << " and my clap name is : " << ClapTrap::_name << std::endl;
+	std::cout << "I'm " << _name << ", and my clap name is " << ClapTrap::_name << std::endl;
 }
+

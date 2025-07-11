@@ -19,6 +19,18 @@ ScavTrap::~ScavTrap()
 	std::cout << "ScavTrap " << _name << " destroyed" << std::endl;
 }
 
+ScavTrap& ScavTrap::operator=(const ScavTrap& src)
+{
+	if (this != &src)
+	{
+		_name = src.getName();
+		_hp = src.getHP();
+		_ep = src.getEP();
+		_dmg = src.getDMG();
+	}
+	return (*this);
+}
+
 void	ScavTrap::attack(const std::string& target)
 {
 	if (!_ep)
