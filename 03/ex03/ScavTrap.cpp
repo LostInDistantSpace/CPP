@@ -41,14 +41,12 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& src)
 
 void	ScavTrap::attack(const std::string& target)
 {
-	if (!_ep)
+	if (!_hp || !_ep)
 	{
-		std::cout << "ScavTrap " << _name << " has no energy left and cannot attack" << std::endl;
-		return;
-	}
-	if (!_hp)
-	{
-		std::cout << "ScavTrap " << _name << " is KO and cannot attack" << std::endl;
+		if (!_hp)
+			std::cout << _name << " is KO and cannot attack" << std::endl;
+		if (!_ep)
+			std::cout << _name << " has no energy left and cannot attack" << std::endl;
 		return;
 	}
 	_ep > 0 ? _ep-- : _ep = 0;

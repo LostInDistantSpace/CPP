@@ -45,7 +45,7 @@ void ClapTrap::attack(const std::string& target)
 		return;
 	}
 
-	_ep--;
+	_ep > 0 ? _ep-- : _ep = 0;
 	std::cout << _name << " attacks " << target;
 	std::cout << ", causing " << _dmg << "DMG, and now has" << _ep << "EP left"  << std::endl;
 }
@@ -79,7 +79,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 		return;
 	}
 	_hp += amount;
-	_ep--;
+	_ep > 0 ? _ep-- : _ep = 0;
 
 	std::cout << _name << " regains " << amount << "HP";
 	std::cout << " and now has " << _hp << "HP and " << _ep << "EP" << std::endl;

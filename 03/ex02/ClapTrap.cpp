@@ -33,17 +33,15 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& src)
 
 void ClapTrap::attack(const std::string& target)
 {
-	if (!_hp)
+	if (!_hp || !_ep)
 	{
-		std::cout << _name << " is KO and cannot attack" << std::endl;
+		if (!_hp)
+			std::cout << _name << " is KO and cannot attack" << std::endl;
+		if (!_ep)
+			std::cout << _name << " has no energy left and cannot attack" << std::endl;
 		return;
 	}
-	if (!_ep)
-	{
-		std::cout << _name << " has no energy left and cannot attack" << std::endl;
-		return;
-	}
-	_ep--;
+	_ep > 0 ? _ep-- : _ep = 0;
 
 	std::cout << _name << " attacks " << target;
 	std::cout << ", causing " << _dmg << "DMG, and has " << _ep << "EP left"  << std::endl;
@@ -60,7 +58,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 		_hp = 0;
 	else
 		_hp -= amount;
-	_ep--;
+	_ep > 0 ? _ep-- : _ep = 0;
 
 	std::cout << _name << " takes " << amount << "DMG, ";
 	if (_hp == 0)
@@ -82,7 +80,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 		return;
 	}
 	_hp += amount;
-	_ep--;
+	_ep > 0 ? _ep-- : _ep = 0;
 
 	std::cout << _name << " regains " << amount << "HP";
 	std::cout << " and now has " << _hp << "HP and " << _ep << "EP left" << std::endl;
