@@ -16,7 +16,7 @@ public:
 	Brain(const Brain& ref);
 	~Brain();
 
-	Brain& operator=(const Brain& ref);
+	Brain&	operator=(const Brain& ref);
 	void	newIdea(std::string idea);
 	std::string	getIdea(int index);
 };

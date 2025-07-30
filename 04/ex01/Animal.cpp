@@ -16,6 +16,7 @@ Animal::~Animal() {
 Animal& Animal::operator=(const Animal& ref)
 {
 	_type = ref.getType();
+	return *this;
 }
 
 std::string	Animal::getType() const { return (_type); }

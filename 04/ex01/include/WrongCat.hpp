@@ -1,10 +1,12 @@
 #pragma once
 
 #include "WrongAnimal.hpp"
+#include "Brain.hpp"
 
 class WrongCat : public WrongAnimal
 {
 private:
+	Brain* _brain;
 	/* data */
 public:
 	WrongCat(/* args */);
@@ -13,4 +15,6 @@ public:
 
 	WrongCat&	operator=(const WrongAnimal& ref);
 	void		makeSound() const;
+	void		addIdea(std::string idea);
+	std::string	getIdea(int index);
 };
