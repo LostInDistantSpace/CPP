@@ -1,4 +1,4 @@
-NAME		:=	polymorph
+NAME		:=	abstract
 
 CPP			:=	c++
 
@@ -6,6 +6,7 @@ CPPFLAGS	:=	-Wall
 CPPFLAGS	+=	-Wextra
 CPPFLAGS	+=	-Werror
 CPPFLAGS	+=	-std=c++98
+CPPFLAGS	+=	-g3
 
 SRC			:=	main.cpp
 SRC			+=	Animal.cpp

@@ -13,7 +13,7 @@ public:
 	WrongCat(const WrongCat& ref);
 	~WrongCat();
 
-	WrongCat&	operator=(const WrongAnimal& ref);
+	WrongCat&	operator=(const WrongCat& ref);
 	void		makeSound() const;
 	void		addIdea(std::string idea);
 	std::string	getIdea(int index);

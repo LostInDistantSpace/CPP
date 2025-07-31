@@ -110,9 +110,8 @@ int main()
 
 	for (int j = 0; j < 10; j++)
 		delete horde[j];
-	std::cout << "\nFreeing copies\n" << std::endl;
 	delete copyDog;
 	delete copyCat;
-	std::cout << "\nDone Freeing copies\n" << std::endl;
+	
 	return (0);
 }

@@ -1,11 +1,12 @@
-NAME		:=	polymorph
+NAME		:=	brain
 
 CPP			:=	c++
 
-CPPFLAGS	:=	-Wall 
-CPPFLAGS	+=	-Wextra
-CPPFLAGS	+=	-Werror
-CPPFLAGS	+=	-std=c++98
+CPP_FLAGS	:=	-Wall
+CPP_FLAGS	+=	-Wextra
+CPP_FLAGS	+=	-Werror
+CPP_FLAGS	+=	-std=c++98
+CPP_FLAGS	+=	-g3
 
 SRC			:=	main.cpp
 SRC			+=	Animal.cpp
