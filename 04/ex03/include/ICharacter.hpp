@@ -2,7 +2,10 @@
 
 #include "AMateria.hpp"
 #include <iomanip>
+#include <iostream>
 #include <string>
+
+class AMateria;
 
 class ICharacter
 {

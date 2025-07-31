@@ -1,6 +1,7 @@
 #pragma	once
 
 #include "ICharacter.hpp"
+#include <vector>
 
 class Character : public ICharacter
 {
@@ -9,6 +10,8 @@ private:
 	std::string	_name;
 	AMateria*	_inventory[4];
 	/* data */
+	AMateria*	_floor[100];
+	int			_idx;
 public:
 	Character(std::string name);
 	Character(const Character& ref);

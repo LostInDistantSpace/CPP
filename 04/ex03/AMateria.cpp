@@ -6,17 +6,14 @@ AMateria::AMateria(std::string const& type) : _type(type)
 {
 }
 
-AMateria::AMateria(const AMateria& ref) : _type(ref.getType())
-{
-}
+AMateria::AMateria(const AMateria& ref) : _type(ref.getType()) {}
 
-AMateria::~AMateria()
-{
-}
+AMateria::~AMateria() {}
 
 AMateria& AMateria::operator=(const AMateria& ref)
 {
 	_type = ref.getType();
+	return *this;
 }
 
 std::string const & AMateria::getType() const

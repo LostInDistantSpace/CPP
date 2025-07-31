@@ -2,14 +2,17 @@
 
 // type = "ice" in lowercase
 
-Ice::Ice() {}
+Ice::Ice()
+{
+	_type = "ice";
+}
 
 Ice::Ice(const Ice& ref)
 {
 	*this = ref;
 }
 
-Ice::~Ice() {}
+Ice::~Ice() { std::cout << "Deleted ice" << std::endl; }
 
 Ice& Ice::operator=(const Ice& ref)
 {
@@ -24,6 +27,5 @@ void	Ice::use(ICharacter& ref)
 
 Ice* Ice::clone() const
 {
-	Ice* clone = new Ice(*this);
-	return (clone);
+	return (new Ice(*this));
 }

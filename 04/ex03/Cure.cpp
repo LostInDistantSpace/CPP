@@ -2,14 +2,17 @@
 
 // type = "cure" lowercase
 
-Cure::Cure() {}
+Cure::Cure()
+{
+	_type = "cure";
+}
 
 Cure::Cure(const Cure& ref)
 {
 	_type = ref.getType();
 }
 
-Cure::~Cure() {}
+Cure::~Cure() { std::cout << "Deleted cure" << std::endl; }
 
 Cure& Cure::operator=(const Cure& ref)
 {
@@ -24,6 +27,5 @@ void	Cure::use(ICharacter& ref)
 
 Cure* Cure::clone() const
 {
-	Cure* clone = new Cure(*this);
-	return (clone);
+	return (new Cure(*this));
 }
