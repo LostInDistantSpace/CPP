@@ -33,14 +33,12 @@ int main()
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
 
-	std::cout << "----- DELETE BOB -----" << std::endl;
+	std::cout << "----- Deleting bob -----" << std::endl;
 	delete bob;
-	std::cout << "----- DELETE ME -----" << std::endl;
+	std::cout << "----- Deleting me -----" << std::endl;
 	delete me;
-	std::cout << "----- DELETE SRC -----" << std::endl;
+	std::cout << "----- Deleting src -----" << std::endl;
 	delete src;
-		
-	std::cout << "----- END -----" << std::endl;
 
 	return 0;
 }

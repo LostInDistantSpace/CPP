@@ -2,15 +2,15 @@
 
 Dog::Dog()
 {
-	_brain = new(std::nothrow) Brain();
 	std::cout << "Dog default constructor" << std::endl;
+	_brain = new(std::nothrow) Brain();
 	_type = "Dog";
 }
 
 Dog::Dog(const Dog& ref)
 {
-	_brain = new(std::nothrow) Brain(*ref._brain);
 	std::cout << "Dog copy constructor called" << std::endl;
+	_brain = new(std::nothrow) Brain(*ref._brain);
 }
 
 Dog::~Dog()

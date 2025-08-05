@@ -2,15 +2,15 @@
 
 Cat::Cat()
 {
-	_brain = new(std::nothrow) Brain();
 	std::cout << "Cat default constructor" << std::endl;
+	_brain = new(std::nothrow) Brain();
 	_type = ("Cat");
 }
 
 Cat::Cat(const Cat& ref)
 {
-	_brain = new(std::nothrow) Brain(*ref._brain);
 	std::cout << "Cat copy constructor called" << std::endl;
+	_brain = new(std::nothrow) Brain(*ref._brain);
 }
 
 Cat::~Cat()

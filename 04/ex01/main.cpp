@@ -87,7 +87,6 @@ int main()
 	idea = copyCat->getIdea(0);
 	std::cout << idea << std::endl;
 
-	std::cout << std::endl;
 	std::cout << "\n------------\n" << std::endl;
 	std::cout << "\e[1mSingle copy test\e[0m" << std::endl;
 	std::cout << std::endl;
