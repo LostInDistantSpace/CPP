@@ -1,20 +1,20 @@
 #include "WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal() : _type("WrongAnimal") {
-	std::cout << "A weird animal came from your nightmares" << std::endl;
+	std::cout << "WrongAnimal default constructor" << std::endl;
 }
 
 WrongAnimal::~WrongAnimal() { 
-	std::cout << "A weird animal disappeared" << std::endl; 
+	std::cout << "WrongAnimal destructor" << std::endl; 
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &copy) : _type(copy._type) {
-	std::cout << "WrongAnimal copy constructor called" << std::endl;
+	std::cout << "WrongAnimal copy constructor" << std::endl;
 }
 
 WrongAnimal	&WrongAnimal::operator=(const WrongAnimal &src)
 {
-	std::cout << "WrongAnimal copy assignment operator called" << std::endl;
+	std::cout << "WrongAnimal copy assignment operator" << std::endl;
 	_type = src._type;
 	return (*this);
 }
@@ -22,5 +22,5 @@ WrongAnimal	&WrongAnimal::operator=(const WrongAnimal &src)
 std::string	WrongAnimal::getType() const { return (_type); }
 
 void	WrongAnimal::makeSound() const {
-	std::cout << "A weird animal screeches" << std::endl;
+	std::cout << "* WrongAnimal noises *" << std::endl;
 }

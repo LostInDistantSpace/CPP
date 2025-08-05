@@ -2,24 +2,24 @@
 
 Cat::Cat()
 {
-	std::cout << "A cat has arrived for headpats" << std::endl;
+	std::cout << "Cat default constructor" << std::endl;
 	_type = ("Cat");
 }
 
 Cat::~Cat()
 {
-	std::cout << "A cat left gracefully" << std::endl;
+	std::cout << "Cat destructor" << std::endl;
 }
 
 Cat::Cat(const Cat &copy)
 {
 	_type = copy._type;
-	std::cout << "Cat copy constructor called" << std::endl;
+	std::cout << "Cat copy constructor" << std::endl;
 }
 
 Cat	&Cat::operator=(const Cat &src)
 {
-	std::cout << "Cat copy assignment operator called" << std::endl;
+	std::cout << "Cat copy assignment operator" << std::endl;
 	_type = src._type;
 	return (*this);
 }

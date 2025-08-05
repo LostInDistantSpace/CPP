@@ -2,30 +2,30 @@
 
 WrongCat::WrongCat()
 {
-	std::cout << "A weird fluffy cat appeared" << std::endl;
+	std::cout << "WeirdCat default constructor" << std::endl;
 	_type = ("WrongCat");
 }
 
 WrongCat::~WrongCat()
 {
-	std::cout << "A weird cat melted to goop on the ground" << std::endl;
+	std::cout << "WeirdCat destructor" << std::endl;
 }
 
 
 WrongCat::WrongCat(const WrongCat &copy)
 {
 	_type = copy._type;
-	std::cout << "WrongCat copy constructor called" << std::endl;
+	std::cout << "WrongCat copy constructor" << std::endl;
 }
 
 WrongCat	&WrongCat::operator=(const WrongCat &src)
 {
-	std::cout << "WrongCat copy assignment operator called" << std::endl;
+	std::cout << "WrongCat copy assignment operator" << std::endl;
 	_type = src._type;
 	return (*this);
 }
 
 void	WrongCat::makeSound() const
 {
-	std::cout << "Meow" << std::endl;
+	std::cout << "Mreow" << std::endl;
 }

@@ -2,24 +2,24 @@
 
 Dog::Dog()
 {
-	std::cout << "A fluffy dog appeared" << std::endl;
+	std::cout << "Dog default constructor" << std::endl;
 	_type = "Dog";
 }
 
 Dog::~Dog()
 {
-	std::cout << "A dog ran out" << std::endl;
+	std::cout << "Dog default destructor" << std::endl;
 }
 
 Dog::Dog(const Dog &copy) 
 {
 	_type = copy._type;
-	std::cout << "Dog copy constructor called" << std::endl;
+	std::cout << "Dog copy constructor" << std::endl;
 }
 
 Dog	&Dog::operator=(const Dog &src)
 {
-	std::cout << "Dog copy assignment operator called" << std::endl;
+	std::cout << "Dog copy assignment operator" << std::endl;
 	_type = src._type;
 	return (*this);
 }

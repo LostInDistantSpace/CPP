@@ -11,7 +11,6 @@ int main()
 	const Animal* cat = new Cat();
 
 	const WrongAnimal*	bad_i = new WrongCat();
-	const WrongCat		wrongcat;
 
 	std::cout << "\nThe first animal is a " << cat->getType() << std::endl;
 	std::cout << "The second animal is a " <<dog->getType() << std::endl;
@@ -20,8 +19,7 @@ int main()
 	std::cout << "Animal : "; meta->makeSound();
 	
 	std::cout << "\nThe third animal is a " << bad_i->getType() << std::endl;
-	std::cout << "WrongCat 1 : "; wrongcat.makeSound(); //will output the wrong cat sound!
-	std::cout << "WrongCat 2 : "; bad_i->makeSound(); 
+	std::cout << "WrongCat : "; bad_i->makeSound(); 
 	std::cout << std::endl;
 	
 	delete cat;
