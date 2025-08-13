@@ -27,7 +27,7 @@ int	main(void)
 		announce("Form not signed");
 		good_boss.executeForm(robo_form);
 		
-		announce("Successful");
+		announce("Successful Robotomy");
 		robo_form.beSigned(good_boss);
 //		robo_form.beSigned(good_boss);
 		good_boss.executeForm(robo_form);
@@ -37,13 +37,13 @@ int	main(void)
 		pres_form.beSigned(good_boss);
 		good_manager.executeForm(pres_form);
 
-		announce("Successful");
+		announce("Successful Presidential Pardon");
 		good_boss.executeForm(pres_form);
 
 		announce("Grade too low");
 		good_intern.executeForm(shrub_form);
 
-		announce("Successful");
+		announce("Successful Shrubbery");
 		shrub_form.beSigned(good_manager);
 		good_manager.executeForm(shrub_form);
 	}

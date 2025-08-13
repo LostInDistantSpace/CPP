@@ -22,7 +22,7 @@ private:
 public:
 	AForm(int sign_grade, int exec_grade, std::string name, std::string target);
 	AForm(const AForm& other);
-	~AForm();
+	virtual ~AForm();
 
 	AForm&		operator=(const AForm& other);
 	bool		isSigned() const;
@@ -32,7 +32,7 @@ public:
 	std::string	getTarget() const;
 
 	void		beSigned(Bureaucrat bur);
-	void		execute(Bureaucrat const & executor) const;
+	virtual void		execute(Bureaucrat const & executor) const;
 
 	class GradeTooHighException : public std::exception 
 	{
