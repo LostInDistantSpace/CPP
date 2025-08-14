@@ -21,7 +21,7 @@ int	main(void)
 		Form		bad_form(-1, 1, "bad_form");
 	}
 	catch (std::exception & e) {
-		std::cout << BOLD RED << e.what() << RESET << std::endl;
+		std::cout << BOLD RED << "Error: " << e.what() << RESET << std::endl;
 	}
 
 	try
@@ -29,15 +29,18 @@ int	main(void)
 		announce("Already Signed Form No Exception");
 		Form	boss_form(2, 15, "boss_form");
 		Bureaucrat	boss(1, "boss");
+		Bureaucrat	intern(150, "intern");
 		
 		std::cout << CYAN << boss_form << RESET;
+		intern.signForm(boss_form);
 		boss.signForm(boss_form);
 		std::cout << GREEN << boss_form << RESET;
 		boss.signForm(boss_form);
+
 		// boss_form.beSigned(boss);
 	}
 	catch (std::exception & e) {
-		std::cout << BOLD RED << e.what() << RESET << std::endl;
+		std::cout << BOLD RED << "Error: " << e.what() << RESET << std::endl;
 	}
 
 	try
@@ -52,7 +55,7 @@ int	main(void)
 		manager_form.beSigned(manager);
 	}
 	catch (std::exception & e) {
-		std::cout << BOLD RED << e.what() << RESET << std::endl;
+		std::cout << BOLD RED << "Error: " << e.what() << RESET << std::endl;
 	}
 
 	try
@@ -65,7 +68,7 @@ int	main(void)
 		boss_form.beSigned(intern);
 	}
 	catch (std::exception & e) {
-		std::cout << BOLD RED << e.what() << RESET << std::endl;
+		std::cout << BOLD RED << "Error: " << e.what() << RESET << std::endl;
 	}
 	return (0);
 }
