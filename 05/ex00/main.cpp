@@ -41,14 +41,29 @@ int	main(void)
 	}
 	try
 	{
-		announce("Wrong Promotion/Demotion");
-		// Bureaucrat fired_intern(150, "fired_intern");
+		announce("Wrong Promotion");
 		Bureaucrat mega_boss(1, "mega_boss");
+		// Bureaucrat fired_intern(150, "fired_intern");
 
-		// std::cout << fired_intern;
 		std::cout << mega_boss;
-		// fired_intern.demote();
 		mega_boss.promote();
+		std::cout << mega_boss;
+		// std::cout << fired_intern;
+		// fired_intern.demote();
+		// std::cout << fired_intern;
+	}
+	catch (std::exception & e)
+	{
+		std::cout << BOLD RED << e.what() << RESET << std::endl;
+	}
+	try
+	{
+		announce("Wrong Demotion");
+		Bureaucrat fired_intern(150, "fired_intern");
+
+		std::cout << fired_intern;
+		fired_intern.demote();
+		std::cout << fired_intern;
 	}
 	catch (std::exception & e)
 	{
