@@ -1,10 +1,14 @@
 #include "Bureaucrat.hpp"
 
+void	announce(std::string msg) {
+	std::cout << BOLD << "\n----- " << msg << " -----\n" << RESET <<  std::endl;
+}
+
 int	main(void)
 {
 	try
 	{
-		std::cout << "----- Normal Behavior -----" << std::endl;
+		announce("Normal Behavior");
 		Bureaucrat	default_bureaucrat;
 		Bureaucrat	boss(1, "Boss");
 		Bureaucrat	manager(70, "Manager");
@@ -20,13 +24,12 @@ int	main(void)
 	}
 	catch (std::exception & e)
 	{
-		std::cout << e.what() << std::endl;
-		return (1);
+		std::cout << BOLD RED << e.what() << RESET << std::endl;
 	}
 	
 	try
 	{
-		std::cout << "\n----- Wrong parameters at creation -----" << std::endl;
+		announce("Wrong parameters at creation");
 //		Bureaucrat	bad_boss(-1, "bad boss");	
 		Bureaucrat	bad_intern(151, "bad intern");
 //		std::cout << bad_boss;
@@ -34,11 +37,11 @@ int	main(void)
 	}
 	catch (std::exception & e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << BOLD RED << e.what() << RESET << std::endl;
 	}
 	try
 	{
-		std::cout << "\n----- Wrong Promotion/Demotion -----" << std::endl;
+		announce("Wrong Promotion/Demotion");
 		// Bureaucrat fired_intern(150, "fired_intern");
 		Bureaucrat mega_boss(1, "mega_boss");
 
@@ -49,7 +52,7 @@ int	main(void)
 	}
 	catch (std::exception & e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << BOLD RED << e.what() << RESET << std::endl;
 	}
 	return (0);
 }
