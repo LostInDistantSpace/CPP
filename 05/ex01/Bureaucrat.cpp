@@ -34,7 +34,21 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
 }
 
 void	Bureaucrat::signForm(Form& form) {
-	form.beSigned(*this);
+	try
+	{
+		form.beSigned(*this);
+		std::cout << getName() << " signed " << form.getName() << std::endl;
+	}
+	catch(const Form::GradeTooLowException& e)
+	{
+		std::cout << getName() << " couldn't sign " << form.getName();
+		std::cout << " because their Grade is too low" << std::endl;
+	}
+	catch(const Form::FormAlreadySigned& e)
+	{
+		std::cout << getName() << " couldn't sign " << form.getName();
+		std::cout << " because the form is already signed" << std::endl;
+	}
 }
 
 // Destructor

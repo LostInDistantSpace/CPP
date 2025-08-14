@@ -26,19 +26,15 @@ int	main(void)
 
 	try
 	{
-		announce("Already Signed Form");
+		announce("Already Signed Form No Exception");
 		Form	boss_form(2, 15, "boss_form");
-		Form	manager_form(71, 100, "manager_form");
 		Bureaucrat	boss(1, "boss");
-		Bureaucrat	manager(70, "manager");
-		Bureaucrat	intern(150, "intern");
 		
-		std::cout << CYAN << boss_form;
-		std::cout << manager_form << RESET;
-		boss_form.beSigned(boss);
+		std::cout << CYAN << boss_form << RESET;
+		boss.signForm(boss_form);
 		std::cout << GREEN << boss_form << RESET;
-		boss_form.beSigned(boss);
-		manager_form.beSigned(manager);
+		boss.signForm(boss_form);
+		// boss_form.beSigned(boss);
 	}
 	catch (std::exception & e) {
 		std::cout << BOLD RED << e.what() << RESET << std::endl;
@@ -46,16 +42,12 @@ int	main(void)
 
 	try
 	{
-		announce("Already Signed Form");
-		Form	boss_form(2, 15, "boss_form");
+		announce("Already Signed Exception");
 		Form	manager_form(75, 100, "important_form");
-		Bureaucrat	boss(1, "boss");
 		Bureaucrat	manager(70, "manager");
 		Bureaucrat	senior(75, "senior bureaucrat");
 		
-		std::cout << CYAN << boss_form;
-		std::cout << manager_form << RESET;
-		boss_form.beSigned(boss);
+		std::cout << CYAN << manager_form << RESET;
 		manager_form.beSigned(senior);
 		manager_form.beSigned(manager);
 	}
@@ -67,13 +59,9 @@ int	main(void)
 	{
 		announce("Bureaucrat Grade too low to sign Form");
 		Form	boss_form(2, 15, "boss_form");
-		Form	manager_form(71, 100, "manager_form");
-		Bureaucrat	boss(1, "boss");
-		Bureaucrat	manager(70, "manager");
 		Bureaucrat	intern(150, "intern");
 		
-		std::cout << CYAN << boss_form;
-		std::cout << manager_form << RESET;
+		std::cout << CYAN << boss_form << RESET;
 		boss_form.beSigned(intern);
 	}
 	catch (std::exception & e) {

@@ -15,8 +15,6 @@ private:
 	const std::string _name;
 	const int _sign_grade;
 	const int _exec_grade;
-
-	void	notSignable(Bureaucrat, std::string);
 	/* data */
 public:
 	Form(int sign_grade, int exec_grade, std::string name);
