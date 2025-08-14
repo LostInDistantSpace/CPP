@@ -2,22 +2,22 @@
 
 const char* AForm::GradeTooHighException::what() const throw()
 {
-	return "Error: Grade too high";
+	return "Grade too high";
 }
 
 const char* AForm::GradeTooLowException::what() const throw()
 {
-	return "Error: Grade too low";
+	return "Grade too low";
 }
 
 const char* AForm::AlreadySignedException::what() const throw()
 {
-	return "Error: Form already signed";
+	return "Form already signed";
 }
 
 const char* AForm::NotSignedException::what() const throw()
 {
-	return "Error: Form not signed";
+	return "Form not signed";
 }
 
 AForm::AForm() : _signed(false), _name("Default AForm"), _sign_grade(150), _exec_grade(150) {}
@@ -70,19 +70,13 @@ void	AForm::notSignable(Bureaucrat bur, std::string error) {
 }
 
 void	AForm::beSigned(Bureaucrat bur) {
-	if (bur.getGrade() > getSignGrade()) {
-		notSignable(bur, "their bureacrat grade is too low");
+	if (bur.getGrade() > getSignGrade())
 		throw GradeTooLowException();
-	}
 	else {
-		if (_signed) {
-			notSignable(bur, "it was already signed");
+		if (_signed)
 			throw AlreadySignedException();
-		}
-		else {
+		else
 			_signed = true;
-			std::cout << bur.getName() << " signed " << getName() << std::endl;
-		}
 	}
 }
 

@@ -12,44 +12,42 @@ int	main(void)
 	try
 	{
 		Bureaucrat	default_bureaucrat;
-		Bureaucrat	good_boss(1, "boss");
-		Bureaucrat	good_manager(30, "manager");
-		Bureaucrat	good_intern(150, "intern");
+		Bureaucrat	boss(1, "Boss");
+		Bureaucrat	manager(30, "Manager");
+		Bureaucrat	intern(150, "Intern");
 		std::cout << default_bureaucrat << std::endl;
-		std::cout << good_boss << std::endl;
-		std::cout << good_manager << std::endl;
-		std::cout << good_intern << std::endl;
+		std::cout << boss << std::endl;
+		std::cout << manager << std::endl;
+		std::cout << intern << std::endl;
 	
-		ShrubberyCreationForm	shrub_form("good_manager");
-		RobotomyRequestForm		robo_form("good_intern");
-		PresidentialPardonForm	pres_form("good_boss");
+		ShrubberyCreationForm	shrub_form("Manager");
+		RobotomyRequestForm		robo_form("Intern");
+		PresidentialPardonForm	pres_form("Boss");
 
 		announce("Form not signed");
-		good_boss.executeForm(robo_form);
+		boss.executeForm(robo_form);
 		
 		announce("Successful Robotomy");
-		robo_form.beSigned(good_boss);
-//		robo_form.beSigned(good_boss);
-		good_boss.executeForm(robo_form);
-//		pres_form.beSigned(good_manager);
+		boss.signForm(robo_form);
+		boss.executeForm(robo_form);
 
 		announce("Grade too low");
-		pres_form.beSigned(good_boss);
-		good_manager.executeForm(pres_form);
+		boss.signForm(pres_form);
+		manager.executeForm(pres_form);
 
 		announce("Successful Presidential Pardon");
-		good_boss.executeForm(pres_form);
+		boss.executeForm(pres_form);
 
 		announce("Grade too low");
-		good_intern.executeForm(shrub_form);
+		intern.executeForm(shrub_form);
 
 		announce("Successful Shrubbery");
-		shrub_form.beSigned(good_manager);
-		good_manager.executeForm(shrub_form);
+		manager.signForm(shrub_form);
+		manager.executeForm(shrub_form);
 	}
 	catch (std::exception & e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << BOLD RED << e.what() << RESET << std::endl;
 	}
 	return (0);
 }

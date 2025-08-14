@@ -34,7 +34,15 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
 }
 
 void	Bureaucrat::signForm(AForm& form) {
-	form.beSigned(*this);
+	try
+	{
+		form.beSigned(*this);
+		std::cout << getName() << " signed " << form.getName() << std::endl;
+	}
+	catch (const std::exception & e) {
+		std::cout << getName() << " couldn't sign " << form.getName();
+		std::cout << " because " << e.what() << std::endl;
+	}
 }
 
 void	Bureaucrat::executeForm(const AForm& form) {
@@ -45,8 +53,9 @@ void	Bureaucrat::executeForm(const AForm& form) {
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << getName() << " could not execute " << form.getName() << '\n';
-		std::cerr << e.what() << std::endl;
+		std::cerr << RED << getName() << " could not execute ";
+		std::cerr << form.getName() << " because ";
+		std::cerr << e.what() << RESET << std::endl;
 	}
 }
 

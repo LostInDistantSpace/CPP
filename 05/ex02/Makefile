@@ -2,7 +2,7 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -g3 -std=c++98
 
-NAME = form
+NAME = forms
 
 SRCS := main.cpp Bureaucrat.cpp AForm.cpp RobotomyRequestForm.cpp
 SRCS += PresidentialPardonForm.cpp  ShrubberyCreationForm.cpp
