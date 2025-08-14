@@ -23,15 +23,13 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	std::ofstream	ShrubberyFile;
 	std::string		file_name;
-	
-	AForm::execute(executor);
 
-	// if (executor.getGrade() > this->getExecGrade())
-	// 	throw GradeTooLowException();
-	// if (this->isSigned() == false)
-	// 	throw NotSignedException();
-	// else
-	// {
+	if (executor.getGrade() > this->getExecGrade())
+		throw GradeTooLowException();
+	if (this->isSigned() == false)
+		throw NotSignedException();
+	else
+	{
 		file_name = this->getTarget() + "_shrubbery";
 		ShrubberyFile.open(file_name.c_str());
 		if (!ShrubberyFile)
@@ -66,5 +64,5 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
         "                      ;%@@@@%%:;;;. \n"
         "                  ...;%@@@@@%%:;;;;,..\n";
 		ShrubberyFile.close();
-	// }
+	}
 }

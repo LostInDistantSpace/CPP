@@ -86,13 +86,6 @@ void	AForm::beSigned(Bureaucrat bur) {
 	}
 }
 
-void	AForm::execute(Bureaucrat const & executor) const  {
-	if (executor.getGrade() > getExecGrade())
-		throw GradeTooLowException();
-	if (isSigned() == false)
-		throw NotSignedException();
-}
-
 std::ostream& operator<<(std::ostream&os, const AForm& form) {
 	std::cout << form.getName() << ", form signed : " << form.isSigned();
 	std::cout << ", required grade to sign " << form.getSignGrade() << ", required grade to execute " << form.getExecGrade() << std::endl;

@@ -16,13 +16,12 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm&) 
 
 void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	AForm::execute(executor);
-	// if (executor.getGrade() > this->getExecGrade())
-	// 	throw GradeTooLowException();
-	// if (this->isSigned() == false)
-	// 	throw NotSignedException();
-	// else
-	// {
+	if (executor.getGrade() > this->getExecGrade())
+		throw GradeTooLowException();
+	if (this->isSigned() == false)
+		throw NotSignedException();
+	else
+	{
 		std::cout << BOLD << "BRRRR... BZZZZ... BRRRR..." << RESET << std::endl;
 		
 		std::srand(std::time(NULL));
@@ -31,6 +30,5 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 			std::cout << " has been successfully robotomized" << std::endl;
 		else
 			std::cout << "'s robotomy failed" << std::endl;
-
-	// }
+	}
 }
