@@ -4,7 +4,7 @@
 Serializer::Serializer(/* args */) {}
 Serializer::Serializer(const Serializer&) {}
 Serializer::~Serializer() {}
-Serializer& Serializer::operator=(const Serializer&) {}
+Serializer& Serializer::operator=(const Serializer&) { return *this; }
 
 uintptr_t	Serializer::serialize(Data* ptr)
 {
