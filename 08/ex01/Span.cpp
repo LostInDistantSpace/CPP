@@ -49,7 +49,7 @@ void	Span::addNumber(int nb)
 	_cur++;
 }
 
-uint32_t	Span::shortestSpan()
+uint32_t	Span::longestSpan()
 {
 	if (_cur < 2)
 		throw NotEnoughNumbersException();
@@ -60,7 +60,7 @@ uint32_t	Span::shortestSpan()
 	return (top - bottom);
 }
 
-uint32_t	Span::longestSpan()
+uint32_t	Span::shortestSpan()
 {
 	if (_cur < 2)
 		throw NotEnoughNumbersException();
