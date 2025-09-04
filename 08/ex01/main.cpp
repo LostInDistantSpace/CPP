@@ -77,21 +77,6 @@ int main(void)
 		// std::cout << ip << std::endl;
 		std::cout << BOLD CYAN "Shortest Span : " RESET <<  ip.shortestSpan() << std::endl;
 		std::cout << BOLD CYAN "Longest Span : " RESET <<  ip.longestSpan() << std::endl;
-
-	/////////////	
-	//MEGA_TEST//
-	/////////////
-
-		printBanner("Mega test");
-		Span megasp = Span(50000);
-		std::vector<int> megav_test;
-		megav_test.reserve(50000);
-		for (int i = 0; i < 49999; i++)
-			megav_test.push_back(random_num());
-		megasp.addNumber(megav_test.begin(), megav_test.end());
-		// std::cout << megasp << std::endl;
-		std::cout << BOLD CYAN "Shortest Span : " RESET <<  megasp.shortestSpan() << std::endl;
-		std::cout << BOLD CYAN "Longest Span : " RESET <<  megasp.longestSpan() << std::endl;
 	
 	//////////////////
 	//EXCEPTION_TEST//
